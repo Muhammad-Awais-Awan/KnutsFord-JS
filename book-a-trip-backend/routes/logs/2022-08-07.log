@@ -1,0 +1,9 @@
+{"date":"2022-08-07","time":"11:00:00","route":"RIL-KGN( viasouth)","seatsBooked":"2","stops":["Falmouth","Kingston","Ocho Rios","Sangster MBJ"],"bookingTimestamp":"2024-10-01T12:18:34.426Z"}
+{"date":"2022-08-07","time":"09:00:00","route":"RIL-KGN( viasouth)","seatsBooked":"2","stops":["Falmouth","Ocho Rios","Sangster MBJ","Angels"],"bookingTimestamp":"2024-10-01T12:43:31.880Z"}
+{"date":"2022-08-07","time":"09:00:00","route":"RIL-KGN( viasouth)","seatsBooked":"2","stops":["Falmouth","Ocho Rios","Sangster MBJ","Angels"],"bookingTimestamp":"2024-10-01T12:45:33.929Z","rdtID":380394}
+{"date":"2022-08-07","time":"09:00:00","route":"RIL-KGN( viasouth)","seatsBooked":"3","stops":["Falmouth","Ocho Rios","Angels"],"bookingTimestamp":"2024-10-01T12:46:18.644Z","rdtID":380394}
+{"date":"2022-08-07","time":"10:00:00","route":"KGN-RIL","seatsBooked":"2","stops":["Falmouth","Kingston","Ocho Rios","Sangster MBJ","Angels","Hanover"],"bookingTimestamp":"2024-10-01T14:52:45.620Z","rdtID":262704}
+{"date":"2022-08-07","time":"10:00:00","route":"KGN-RIL","seatsBooked":"2","stops":["Kingston","Ocho Rios","Angels"],"bookingTimestamp":"2024-10-01T15:04:06.897Z","rdtID":262704}
+{"date":"2022-08-07","time":"10:00:00","route":"KGN-RIL","seatsBooked":"2","stops":["Kingston","Ocho Rios","Angels"],"bookingTimestamp":"2024-10-01T15:32:57.997Z","rdtID":262704}
+{"date":"2022-08-07","time":"10:00:00","route":"KGN-RIL","seatsBooked":"3","stops":["Falmouth","Sangster MBJ","Hanover"],"bookingTimestamp":"2024-10-01T15:46:32.965Z","rdtID":262704}
+{"date":"2022-08-07","time":"10:00:00","route":"KGN-RIL","seatsBooked":"1","stops":["Falmouth","Sangster MBJ","Hanover"],"bookingTimestamp":"2024-10-01T15:51:45.194Z","rdtID":262704}
