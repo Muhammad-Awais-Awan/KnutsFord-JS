@@ -5,72 +5,72 @@ const config = {
   user: "BusSystem",
   password: "BusSystem",
   database: "busSystem",
-  server: "DESKTOP-F20I78T",
+  server: "DESKTOP-JK89I6H",
   options: {
     trustServerCertificate: true, // For local development, you might need this if you're connecting locally
   },
 };
-// -------------------------------3-74------------------------------------
-// const parentRouteID = 324;
-// const branchNames = {
-//   3: "KGN", // Kingston
-//   17: "MPN", // May Pen
-//   5: "MVL", // Mandeville
-//   2: "GUT", // Gutters
-//   4: "LUA", // Luana
-//   11: "SAV", // Savanna La Mar
-//   74: "NEGS", // Negril
-// };
-// const routes = [
-//   { origin: 3, destination: 17 }, // KGN -> MPN
-//   { origin: 3, destination: 5 }, // KGN -> MVL
-//   { origin: 3, destination: 2 }, // KGN -> GUT
-//   { origin: 3, destination: 4 }, // KGN -> LUA
-//   { origin: 3, destination: 11 }, // KGN -> SAV
-//   // { origin: 3, destination: 74 },   // KGN -> NEGS
+// -------------------------------3-73------------------------------------
+const parentRouteID = 176;
+const branchNames = {
+  3: "KGN", // Kingston
+  17: "MPN", // May Pen
+  5: "MVL", // Mandeville
+  2: "GUT", // Gutters
+  4: "LUA", // Luana
+  11: "SAV", // Savanna La Mar
+  73: "NEGS", // Negril
+};
+const routes = [
+  { origin: 3, destination: 17 }, // KGN -> MPN
+  { origin: 3, destination: 5 }, // KGN -> MVL
+  { origin: 3, destination: 2 }, // KGN -> GUT
+  { origin: 3, destination: 4 }, // KGN -> LUA
+  { origin: 3, destination: 11 }, // KGN -> SAV
+  // { origin: 3, destination: 73 },   // KGN -> NEGS
 
-//   { origin: 17, destination: 5 }, // MPN -> MVL
-//   { origin: 17, destination: 2 }, // MPN -> GUT
-//   { origin: 17, destination: 4 }, // MPN -> LUA
-//   { origin: 17, destination: 11 }, // MPN -> SAV
-//   { origin: 17, destination: 74 }, // MPN -> NEGS
+  { origin: 17, destination: 5 }, // MPN -> MVL
+  { origin: 17, destination: 2 }, // MPN -> GUT
+  { origin: 17, destination: 4 }, // MPN -> LUA
+  { origin: 17, destination: 11 }, // MPN -> SAV
+  { origin: 17, destination: 73 }, // MPN -> NEGS
 
-//   { origin: 5, destination: 2 }, // MVL -> GUT
-//   { origin: 5, destination: 4 }, // MVL -> LUA
-//   { origin: 5, destination: 11 }, // MVL -> SAV
-//   { origin: 5, destination: 74 }, // MVL -> NEGS
+  { origin: 5, destination: 2 }, // MVL -> GUT
+  { origin: 5, destination: 4 }, // MVL -> LUA
+  { origin: 5, destination: 11 }, // MVL -> SAV
+  { origin: 5, destination: 73 }, // MVL -> NEGS
 
-//   { origin: 2, destination: 4 }, // GUT -> LUA
-//   { origin: 2, destination: 11 }, // GUT -> SAV
-//   { origin: 2, destination: 74 }, // GUT -> NEGS
+  { origin: 2, destination: 4 }, // GUT -> LUA
+  { origin: 2, destination: 11 }, // GUT -> SAV
+  { origin: 2, destination: 73 }, // GUT -> NEGS
 
-//   { origin: 4, destination: 11 }, // LUA -> SAV
-//   { origin: 4, destination: 74 }, // LUA -> NEGS
+  { origin: 4, destination: 11 }, // LUA -> SAV
+  { origin: 4, destination: 73 }, // LUA -> NEGS
 
-//   { origin: 11, destination: 74 }, // SAV -> NEGS
-// ];
+  { origin: 11, destination: 73 }, // SAV -> NEGS
+];
 
-// ----------------------------74-3-------------------------------------
-// const parentRouteID = 299;
+// ----------------------------73-3-------------------------------------
+// const parentRouteID = 363;
 // // Branch names mapped to their IDs
 // const branchNames = {
-//   3: "KGN",
-//   17: "MPN",
-//   5: "MVL",
-//   2: "GUT",
-//   4: "LUA",
+//   73: "NEGS",
 //   11: "SAV",
-//   74: "NEGS",
+//   4: "LUA",
+//   2: "GUT",
+//   5: "MVL",
+//   17: "MPN",
+//   3: "KGN",
 // };
 
 // // List of routes to insert (OriginBranchId, DestinationBranchId)
 // const routes = [
-//   { origin: 74, destination: 11 }, // NEGS -> SAV
-//   { origin: 74, destination: 4 }, // NEGS -> LUA
-//   { origin: 74, destination: 2 }, // NEGS -> GUT
-//   { origin: 74, destination: 5 }, // NEGS -> MVL
-//   { origin: 74, destination: 17 }, // NEGS -> MPN
-//   // { origin: 74, destination: 3 },   // NEGS -> KGN
+//   { origin: 73, destination: 11 }, // NEGS -> SAV
+//   { origin: 73, destination: 4 }, // NEGS -> LUA
+//   { origin: 73, destination: 2 }, // NEGS -> GUT
+//   { origin: 73, destination: 5 }, // NEGS -> MVL
+//   { origin: 73, destination: 17 }, // NEGS -> MPN
+//   // { origin: 73, destination: 3 },   // NEGS -> KGN
 
 //   { origin: 11, destination: 4 }, // SAV -> LUA
 //   { origin: 11, destination: 2 }, // SAV -> GUT
@@ -99,7 +99,7 @@ const config = {
 // const branchNames = {
 //   3: "KGN",
 //   16: "ANG",
-//   8: "OCH",
+//   18: "OCH",
 //   1: "FAL",
 //   14: "MBJ",
 //   20: "LUC",
@@ -109,24 +109,29 @@ const config = {
 // // List of routes to insert (OriginBranchId, DestinationBranchId)
 // const routes = [
 //   { origin: 3, destination: 16 }, // KGN -> ANG
-//   { origin: 3, destination: 8 }, // KGN -> OCH
+//   { origin: 3, destination: 18 }, // KGN -> OCH
 //   { origin: 3, destination: 1 }, // KGN -> FAL
 //   { origin: 3, destination: 14 }, // KGN -> MBJ
 //   { origin: 3, destination: 20 }, // KGN -> LUC
-//   { origin: 16, destination: 8 }, // ANG -> OCH
+
+//   { origin: 16, destination: 18 }, // ANG -> OCH
 //   { origin: 16, destination: 1 }, // ANG -> FAL
 //   { origin: 16, destination: 14 }, // ANG -> MBJ
 //   { origin: 16, destination: 20 }, // ANG -> LUC
 //   { origin: 16, destination: 7 }, // ANG -> NEG
-//   { origin: 8, destination: 1 }, // OCH -> FAL
-//   { origin: 8, destination: 14 }, // OCH -> MBJ
-//   { origin: 8, destination: 20 }, // OCH -> LUC
-//   { origin: 8, destination: 7 }, // OCH -> NEG
+
+//   { origin: 18, destination: 1 }, // OCH -> FAL
+//   { origin: 18, destination: 14 }, // OCH -> MBJ
+//   { origin: 18, destination: 20 }, // OCH -> LUC
+//   { origin: 18, destination: 7 }, // OCH -> NEG
+
 //   { origin: 1, destination: 14 }, // FAL -> MBJ
 //   { origin: 1, destination: 20 }, // FAL -> LUC
 //   { origin: 1, destination: 7 }, // FAL -> NEG
+
 //   { origin: 14, destination: 20 }, // MBJ -> LUC
 //   { origin: 14, destination: 7 }, // MBJ -> NEG
+
 //   { origin: 20, destination: 7 }, // LUC -> NEG
 // ];
 //------------------------------7-3-------------------------------------------
@@ -136,7 +141,7 @@ const config = {
 //   20: "LUC", // Hanover
 //   14: "MBJ", // Montego Bay
 //   1: "FAL", // Falmouth
-//   8: "OCH", // Ocho Rios
+//   18: "OCH", // Ocho Rios
 //   16: "ANG", // Angels
 //   3: "KGN", // Kingston
 // };
@@ -144,126 +149,127 @@ const config = {
 //   { origin: 7, destination: 20 }, // NEG -> LUC
 //   { origin: 7, destination: 14 }, // NEG -> MBJ
 //   { origin: 7, destination: 1 }, // NEG -> FAL
-//   { origin: 7, destination: 8 }, // NEG -> OCH
+//   { origin: 7, destination: 18 }, // NEG -> OCH
 //   { origin: 7, destination: 16 }, // NEG -> ANG
 //   // { origin: 7, destination: 3 },   // NEG -> KGN ParentRoute
 
 //   { origin: 20, destination: 14 }, // LUC -> MBJ
 //   { origin: 20, destination: 1 }, // LUC -> FAL
-//   { origin: 20, destination: 8 }, // LUC -> OCH
+//   { origin: 20, destination: 18 }, // LUC -> OCH
 //   { origin: 20, destination: 16 }, // LUC -> ANG
 //   { origin: 20, destination: 3 }, // LUC -> KGN
 
 //   { origin: 14, destination: 1 }, // MBJ -> FAL
-//   { origin: 14, destination: 8 }, // MBJ -> OCH
+//   { origin: 14, destination: 18 }, // MBJ -> OCH
 //   { origin: 14, destination: 16 }, // MBJ -> ANG
 //   { origin: 14, destination: 3 }, // MBJ -> KGN
 
-//   { origin: 1, destination: 8 }, // FAL -> OCH
+//   { origin: 1, destination: 18 }, // FAL -> OCH
 //   { origin: 1, destination: 16 }, // FAL -> ANG
 //   { origin: 1, destination: 3 }, // FAL -> KGN
 
-//   { origin: 8, destination: 16 }, // OCH -> ANG
-//   { origin: 8, destination: 3 }, // OCH -> KGN
+//   { origin: 18, destination: 16 }, // OCH -> ANG
+//   { origin: 18, destination: 3 }, // OCH -> KGN
 
 //   { origin: 16, destination: 3 }, // ANG -> KGN
 // ];
-//------------------------------7-13---------------------------------------------
-// const parentRouteID = 325;
+//------------------------------7-15---------------------------------------------
+// const parentRouteID = 332;
 // const branchNames = {
 //   7: "NEG", // Negril
 //   20: "LUC", // Hanover
 //   14: "MBJ", // Montego Bay
 //   1: "FAL", // Falmouth
-//   8: "OCH", // Ocho Rios
-//   10: "STM", // Santa Cruz
-//   15: "ANT", // Annotto Bay
-//   13: "POT", // Port Antonio
+//   18: "OCH", // Ocho Rios
+//   13: "STM", // Santa Cruz
+//   12: "ANT", // Annotto Bay
+//   15: "POT", // Port Antonio
 // };
 // const routes = [
 //   { origin: 7, destination: 20 }, // NEG -> LUC
 //   { origin: 7, destination: 14 }, // NEG -> MBJ
 //   { origin: 7, destination: 1 }, // NEG -> FAL
-//   { origin: 7, destination: 8 }, // NEG -> OCH
-//   { origin: 7, destination: 10 }, // NEG -> STM
-//   { origin: 7, destination: 15 }, // NEG -> ANT
-//   // { origin: 7, destination: 13 },   // NEG -> POT parent Route
+//   { origin: 7, destination: 18 }, // NEG -> OCH
+//   { origin: 7, destination: 13 }, // NEG -> STM
+//   { origin: 7, destination: 12 }, // NEG -> ANT
+//   // { origin: 7, destination: 15 },   // NEG -> POT parent Route
 
 //   { origin: 20, destination: 14 }, // LUC -> MBJ
 //   { origin: 20, destination: 1 }, // LUC -> FAL
-//   { origin: 20, destination: 8 }, // LUC -> OCH
-//   { origin: 20, destination: 10 }, // LUC -> STM
-//   { origin: 20, destination: 15 }, // LUC -> ANT
-//   { origin: 20, destination: 13 }, // LUC -> POT
+//   { origin: 20, destination: 18 }, // LUC -> OCH
+//   { origin: 20, destination: 13 }, // LUC -> STM
+//   { origin: 20, destination: 12 }, // LUC -> ANT
+//   { origin: 20, destination: 15 }, // LUC -> POT
 
 //   { origin: 14, destination: 1 }, // MBJ -> FAL
-//   { origin: 14, destination: 8 }, // MBJ -> OCH
-//   { origin: 14, destination: 10 }, // MBJ -> STM
-//   { origin: 14, destination: 15 }, // MBJ -> ANT
-//   { origin: 14, destination: 13 }, // MBJ -> POT
+//   { origin: 14, destination: 18 }, // MBJ -> OCH
+//   { origin: 14, destination: 13 }, // MBJ -> STM
+//   { origin: 14, destination: 12 }, // MBJ -> ANT
+//   { origin: 14, destination: 15 }, // MBJ -> POT
 
-//   { origin: 1, destination: 8 }, // FAL -> OCH
-//   { origin: 1, destination: 10 }, // FAL -> STM
-//   { origin: 1, destination: 15 }, // FAL -> ANT
-//   { origin: 1, destination: 13 }, // FAL -> POT
+//   { origin: 1, destination: 18 }, // FAL -> OCH
+//   { origin: 1, destination: 13 }, // FAL -> STM
+//   { origin: 1, destination: 12 }, // FAL -> ANT
+//   { origin: 1, destination: 15 }, // FAL -> POT
 
-//   { origin: 8, destination: 10 }, // OCH -> STM
-//   { origin: 8, destination: 15 }, // OCH -> ANT
-//   { origin: 8, destination: 13 }, // OCH -> POT
+//   { origin: 18, destination: 13 }, // OCH -> STM
+//   { origin: 18, destination: 12 }, // OCH -> ANT
+//   { origin: 18, destination: 15 }, // OCH -> POT
 
-//   { origin: 10, destination: 15 }, // STM -> ANT
-//   { origin: 10, destination: 13 }, // STM -> POT
+//   { origin: 13, destination: 12 }, // STM -> ANT
+//   { origin: 13, destination: 15 }, // STM -> POT
 
-//   { origin: 15, destination: 13 }, // ANT -> POT
+//   { origin: 12, destination: 15 }, // ANT -> POT
 // ];
-//-------------------------------13-17-------------------------------------------------
-const parentRouteID = 165;
-const branchNames = {
-  13: "POT", // Port Antonio
-  15: "ANT", // Annotto Bay
-  10: "STM", // Santa Cruz
-  8: "OCH", // Ocho Rios
-  1: "FAL", // Falmouth
-  14: "MBJ", // Montego Bay
-  20: "LUC", // Hanover
-  7: "NEG", // Negril
-};
-const routes = [
-  { origin: 13, destination: 15 }, // POT -> ANT
-  { origin: 13, destination: 10 }, // POT -> STM
-  { origin: 13, destination: 8 }, // POT -> OCH
-  { origin: 13, destination: 1 }, // POT -> FAL
-  { origin: 13, destination: 14 }, // POT -> MBJ
-  { origin: 13, destination: 20 }, // POT -> LUC
-  // { origin: 13, destination: 7 }, // POT -> NEG
 
-  { origin: 15, destination: 10 }, // ANT -> STM
-  { origin: 15, destination: 8 }, // ANT -> OCH
-  { origin: 15, destination: 1 }, // ANT -> FAL
-  { origin: 15, destination: 14 }, // ANT -> MBJ
-  { origin: 15, destination: 20 }, // ANT -> LUC
-  { origin: 15, destination: 7 }, // ANT -> NEG
+//-------------------------------15-7-------------------------------------------------
+// const parentRouteID = 317;
+// const branchNames = {
+//   15: "POT", // Port Antonio
+//   12: "ANT", // Annotto Bay
+//   13: "STM", // Santa Cruz
+//   18: "OCH", // Ocho Rios
+//   1: "FAL", // Falmouth
+//   14: "MBJ", // Montego Bay
+//   20: "LUC", // Hanover
+//   7: "NEG", // Negril
+// };
+// const routes = [
+//   { origin: 15, destination: 12 }, // POT -> ANT
+//   { origin: 15, destination: 13 }, // POT -> STM
+//   { origin: 15, destination: 18 }, // POT -> OCH
+//   { origin: 15, destination: 1 }, // POT -> FAL
+//   { origin: 15, destination: 14 }, // POT -> MBJ
+//   { origin: 15, destination: 20 }, // POT -> LUC
+//   { origin: 15, destination: 7 }, // POT -> NEG
 
-  { origin: 10, destination: 8 }, // STM -> OCH
-  { origin: 10, destination: 1 }, // STM -> FAL
-  { origin: 10, destination: 14 }, // STM -> MBJ
-  { origin: 10, destination: 20 }, // STM -> LUC
-  { origin: 10, destination: 7 }, // STM -> NEG
+//   { origin: 12, destination: 13 }, // ANT -> STM
+//   { origin: 12, destination: 18 }, // ANT -> OCH
+//   { origin: 12, destination: 1 }, // ANT -> FAL
+//   { origin: 12, destination: 14 }, // ANT -> MBJ
+//   { origin: 12, destination: 20 }, // ANT -> LUC
+//   { origin: 12, destination: 7 }, // ANT -> NEG
 
-  { origin: 8, destination: 1 }, // OCH -> FAL
-  { origin: 8, destination: 14 }, // OCH -> MBJ
-  { origin: 8, destination: 20 }, // OCH -> LUC
-  { origin: 8, destination: 7 }, // OCH -> NEG
+//   { origin: 13, destination: 18 }, // STM -> OCH
+//   { origin: 13, destination: 1 }, // STM -> FAL
+//   { origin: 13, destination: 14 }, // STM -> MBJ
+//   { origin: 13, destination: 20 }, // STM -> LUC
+//   { origin: 13, destination: 7 }, // STM -> NEG
 
-  { origin: 1, destination: 14 }, // FAL -> MBJ
-  { origin: 1, destination: 20 }, // FAL -> LUC
-  { origin: 1, destination: 7 }, // FAL -> NEG
+//   { origin: 18, destination: 1 }, // OCH -> FAL
+//   { origin: 18, destination: 14 }, // OCH -> MBJ
+//   { origin: 18, destination: 20 }, // OCH -> LUC
+//   { origin: 18, destination: 7 }, // OCH -> NEG
 
-  { origin: 14, destination: 20 }, // MBJ -> LUC
-  { origin: 14, destination: 7 }, // MBJ -> NEG
+//   { origin: 1, destination: 14 }, // FAL -> MBJ
+//   { origin: 1, destination: 20 }, // FAL -> LUC
+//   { origin: 1, destination: 7 }, // FAL -> NEG
 
-  { origin: 20, destination: 7 }, // LUC -> NEG
-];
+//   { origin: 14, destination: 20 }, // MBJ -> LUC
+//   { origin: 14, destination: 7 }, // MBJ -> NEG
+
+//   { origin: 20, destination: 7 }, // LUC -> NEG
+// ];
 
 // Common values for all routes
 const commonValues = {

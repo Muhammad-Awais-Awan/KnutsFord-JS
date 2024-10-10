@@ -5,7 +5,7 @@ const config = {
   user: "BusSystem",
   password: "BusSystem",
   database: "busSystem",
-  server: "DESKTOP-F20I78T",
+  server: "DESKTOP-JK89I6H",
   options: {
     trustServerCertificate: true, // For local development, you might need this if you're connecting locally
   },
@@ -17,18 +17,17 @@ function formatDate(date) {
 }
 
 // Function to fetch parent routes for a given date
-async function getParentRoutesForDate(date) {
+async function getParentRoutesForDate() {
   try {
     const query = `
       SELECT rdt.*, r.ParentRoute
       FROM RouteDepartureTimes rdt
       JOIN Routes r ON rdt.RouteID = r.Id
-      WHERE CONVERT(DATE,rdt.ActivationDate) = @date AND r.ParentRoute=0;
+      WHERE r.ParentRoute=0;
     `;
     const pool = await sql.connect(config);
     const result = await pool
       .request()
-      .input("date", sql.DateTime, date)
       .query(query);
     return result.recordset;
   } catch (err) {
@@ -38,18 +37,17 @@ async function getParentRoutesForDate(date) {
 }
 
 // Function to fetch subroutes for a given date
-async function getSubRoutesForDate(date) {
+async function getSubRoutesForDate() {
   try {
     const query = `
       SELECT rdt.*, r.ParentRoute, r.subRoute
       FROM RouteDepartureTimes rdt
       JOIN Routes r ON rdt.RouteID = r.Id
-      WHERE CONVERT(DATE,rdt.ActivationDate) = @date AND r.subRoute=1;
+      WHERE r.subRoute=1;
     `;
     const pool = await sql.connect(config);
     const result = await pool
       .request()
-      .input("date", sql.DateTime, date)
       .query(query);
     return result.recordset;
   } catch (err) {
@@ -80,11 +78,11 @@ async function updateSubRouteSlot(subRouteId, slot) {
 }
 
 // Function to assign slots to subroutes based on parent routes
-async function assignSlots(date) {
+async function assignSlots() {
   try {
     // Fetch parent routes and subroutes for the given date
-    const parentRoutes = await getParentRoutesForDate(date);
-    const subRoutes = await getSubRoutesForDate(date);
+    const parentRoutes = await getParentRoutesForDate();
+    const subRoutes = await getSubRoutesForDate();
     // console.log("PARENT ROUTES:", parentRoutes);
     // console.log("SUB ROUTES:", subRoutes);
 
@@ -162,11 +160,8 @@ async function assignSlots(date) {
   }
 }
 
-// Run the slot assignment process for a specific date
-// const date = "2025-08-05"; // Example date
-// const date = "2024-08-07"; // Example date
-const date = "2022-08-07"; // Example date
-assignSlots(date)
+
+assignSlots()
   .then(() => {
     console.log("Slot assignment completed.");
   })

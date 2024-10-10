@@ -47,7 +47,7 @@
         RouteDepartureTimes
     WHERE 
         ActivationDate IS NOT NULL 
-        AND RouteId IN (1, 137, 165, 299, 324, 325) -- Only consider specific Parent Route IDs
+        AND RouteId IN (1, 137, 176, 317, 332, 363) -- Only consider specific Parent Route IDs
 )
 
 -- Step 2: Update the RouteDepartureTimes table with the calculated Slot values

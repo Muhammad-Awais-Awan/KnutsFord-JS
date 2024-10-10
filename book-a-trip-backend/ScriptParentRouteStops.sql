@@ -1,15 +1,17 @@
 CREATE TABLE ParentRouteBranchStops (
+    Id INT IDENTITY(1,1),  -- Auto-incrementing Id column
     ParentRouteID INT,
     BranchID INT,
     StopOrder INT,
-    PRIMARY KEY (ParentRouteID, BranchID)
+    PRIMARY KEY (Id),  -- Set Id as the primary key
+    UNIQUE (ParentRouteID, BranchID)  -- Ensure uniqueness for ParentRouteID and BranchID
 );
 -- Insert data for ParentRouteID: 1 (Kingston - Negril)
 INSERT INTO ParentRouteBranchStops (ParentRouteID, BranchID, StopOrder)
 VALUES 
 (1, 3, 1),  -- KGN (Kingston)
 (1, 16, 2), -- ANG (Angels)
-(1, 8, 3),  -- OCH (Ocho Rios)
+(1, 18, 3),  -- OCH (Ocho Rios)
 (1, 1, 4),  -- FAL (Falmouth)
 (1, 14, 5), -- MBJ (Montego Bay)
 (1, 20, 6), -- LUC (Hanover)
@@ -22,52 +24,52 @@ VALUES
 (137, 20, 2), -- LUC (Hanover)
 (137, 14, 3), -- MBJ (Montego Bay)
 (137, 1, 4),  -- FAL (Falmouth)
-(137, 8, 5),  -- OCH (Ocho Rios)
+(137, 18, 5),  -- OCH (Ocho Rios)
 (137, 16, 6), -- ANG (Angels)
 (137, 3, 7);  -- KGN (Kingston)
 
--- Insert data for ParentRouteID: 165 (Port Maria - Negril)
+-- Insert data for ParentRouteID: 317 (Port Maria - Negril)
 INSERT INTO ParentRouteBranchStops (ParentRouteID, BranchID, StopOrder)
 VALUES 
-(165, 13, 1), -- POT (Port Antonio)
-(165, 15, 2), --  // Annotto Bay
-(165, 10, 3), -- // Santa Cruz
-(165, 8, 4),  -- // Ocho Rios
-(165, 1, 5),  -- // Falmouth
-(165, 14, 6), -- // Montego Bay
-(165, 20, 7), -- // Hanover
-(165, 7, 8);  -- // Negril
+(317, 15, 1), -- POT (Port Antonio)
+(317, 12, 2), --  // Annotto Bay
+(317, 13, 3), -- // Santa Cruz
+(317, 18, 4),  -- // Ocho Rios
+(317, 1, 5),  -- // Falmouth
+(317, 14, 6), -- // Montego Bay
+(317, 20, 7), -- // Hanover
+(317, 7, 8);  -- // Negril
 
--- Insert data for ParentRouteID: 299 (Negril via South - Kingston)
+-- Insert data for ParentRouteID: 363 (Negril via South - Kingston)
 INSERT INTO ParentRouteBranchStops (ParentRouteID, BranchID, StopOrder)
 VALUES 
-(299, 74, 1), -- NEGS (Negril)
-(299, 11, 2), -- SAV (Savanna La Mar)
-(299, 4, 3),  -- LUA (Luana)
-(299, 2, 4),  -- GUT (Gutters)
-(299, 5, 5),  -- MVL (Mandeville)
-(299, 17, 6), -- MPN (May Pen)
-(299, 3, 7);  -- KGN (Kingston)
+(363, 73, 1), -- NEGS (Negril)
+(363, 11, 2), -- SAV (Savanna La Mar)
+(363, 4, 3),  -- LUA (Luana)
+(363, 2, 4),  -- GUT (Gutters)
+(363, 5, 5),  -- MVL (Mandeville)
+(363, 17, 6), -- MPN (May Pen)
+(363, 3, 7);  -- KGN (Kingston)
 
--- Insert data for ParentRouteID: 324 (KGN to NEGS)
+-- Insert data for ParentRouteID: 176 (KGN to NEGS)
 INSERT INTO ParentRouteBranchStops (ParentRouteID, BranchID, StopOrder)
 VALUES 
-(324, 3, 1),  -- KGN (Kingston)
-(324, 17, 2), -- MPN (May Pen)
-(324, 5, 3),  -- MVL (Mandeville)
-(324, 2, 4),  -- GUT (Gutters)
-(324, 4, 5),  -- LUA (Luana)
-(324, 11, 6), -- SAV (Savanna La Mar)
-(324, 74, 7); -- NEGS (Negril)
+(176, 3, 1),  -- KGN (Kingston)
+(176, 17, 2), -- MPN (May Pen)
+(176, 5, 3),  -- MVL (Mandeville)
+(176, 2, 4),  -- GUT (Gutters)
+(176, 4, 5),  -- LUA (Luana)
+(176, 11, 6), -- SAV (Savanna La Mar)
+(176, 73, 7); -- NEGS (Negril)
 
--- Insert data for ParentRouteID: 325 (NEG to POT)
+-- Insert data for ParentRouteID: 332 (NEG to POT)
 INSERT INTO ParentRouteBranchStops (ParentRouteID, BranchID, StopOrder)
 VALUES 
-(325, 7, 1),  -- NEG (Negril)
-(325, 20, 2), -- LUC (Hanover)
-(325, 14, 3), -- MBJ (Montego Bay)
-(325, 1, 4),  -- FAL (Falmouth)
-(325, 8, 5),  -- OCH (Ocho Rios)
-(325, 10, 6), -- STM (Santa Cruz)
-(325, 15, 7), -- ANT (Annotto Bay)
-(325, 13, 8); -- POT (Port Antonio)
+(332, 7, 1),  -- NEG (Negril)
+(332, 20, 2), -- LUC (Hanover)
+(332, 14, 3), -- MBJ (Montego Bay)
+(332, 1, 4),  -- FAL (Falmouth)
+(332, 18, 5),  -- OCH (Ocho Rios)
+(332, 13, 6), -- STM (Santa Cruz)
+(332, 12, 7), -- ANT (Annotto Bay)
+(332, 15, 8); -- POT (Port Antonio)

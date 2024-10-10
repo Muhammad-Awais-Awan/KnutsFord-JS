@@ -4,8 +4,8 @@ const sql = require("mssql");
 const config = {
   user: "BusSystem",
   password: "BusSystem",
-  database: "busSystem",
-  server: "DESKTOP-F20I78T",
+  database: "KnutFord_Database_Dev",
+  server: "VmExternalDev",
   options: {
     trustServerCertificate: true, // For local development, you might need this if you're connecting locally
   },
