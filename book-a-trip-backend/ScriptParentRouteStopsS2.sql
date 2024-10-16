@@ -60,7 +60,8 @@ VALUES
 (176, 2, 4),  -- GUT (Gutters)
 (176, 4, 5),  -- LUA (Luana)
 (176, 11, 6), -- SAV (Savanna La Mar)
-(176, 73, 7); -- NEGS (Negril)
+(176, 14, 7), -- MBJ (Sangster MBJ)
+(176, 73, 8); -- NEGS (Negril)
 
 -- Insert data for ParentRouteID: 332 (NEG to POT)
 INSERT INTO ParentRouteBranchStops (ParentRouteID, BranchID, StopOrder)

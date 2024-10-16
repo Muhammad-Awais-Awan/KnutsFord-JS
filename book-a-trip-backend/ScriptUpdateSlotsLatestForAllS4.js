@@ -23,12 +23,10 @@ async function getParentRoutesForDate() {
       SELECT rdt.*, r.ParentRoute
       FROM RouteDepartureTimes rdt
       JOIN Routes r ON rdt.RouteID = r.Id
-      WHERE r.ParentRoute=0;
+      WHERE r.id=176;
     `;
     const pool = await sql.connect(config);
-    const result = await pool
-      .request()
-      .query(query);
+    const result = await pool.request().query(query);
     return result.recordset;
   } catch (err) {
     console.error("Error fetching parent routes:", err);
@@ -43,12 +41,10 @@ async function getSubRoutesForDate() {
       SELECT rdt.*, r.ParentRoute, r.subRoute
       FROM RouteDepartureTimes rdt
       JOIN Routes r ON rdt.RouteID = r.Id
-      WHERE r.subRoute=1;
+      WHERE r.subRoute=1 and r.ParentRoute=176;
     `;
     const pool = await sql.connect(config);
-    const result = await pool
-      .request()
-      .query(query);
+    const result = await pool.request().query(query);
     return result.recordset;
   } catch (err) {
     console.error("Error fetching subroutes:", err);
@@ -159,7 +155,6 @@ async function assignSlots() {
     console.error("Error during slot assignment:", err);
   }
 }
-
 
 assignSlots()
   .then(() => {

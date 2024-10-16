@@ -19,35 +19,52 @@ const branchNames = {
   2: "GUT", // Gutters
   4: "LUA", // Luana
   11: "SAV", // Savanna La Mar
+  14: "MBJ", // Sangster MBJ
   73: "NEGS", // Negril
 };
+
 const routes = [
+  // Direct routes from KGN to other branches
   { origin: 3, destination: 17 }, // KGN -> MPN
   { origin: 3, destination: 5 }, // KGN -> MVL
   { origin: 3, destination: 2 }, // KGN -> GUT
   { origin: 3, destination: 4 }, // KGN -> LUA
   { origin: 3, destination: 11 }, // KGN -> SAV
-  // { origin: 3, destination: 73 },   // KGN -> NEGS
+  { origin: 3, destination: 14 }, // KGN -> MBJ
+  // { origin: 3, destination: 73 }, // KGN -> NEGS
 
+  // Subroutes starting from MPN
   { origin: 17, destination: 5 }, // MPN -> MVL
   { origin: 17, destination: 2 }, // MPN -> GUT
   { origin: 17, destination: 4 }, // MPN -> LUA
   { origin: 17, destination: 11 }, // MPN -> SAV
+  { origin: 17, destination: 14 }, // MPN -> MBJ
   { origin: 17, destination: 73 }, // MPN -> NEGS
 
+  // Subroutes starting from MVL
   { origin: 5, destination: 2 }, // MVL -> GUT
   { origin: 5, destination: 4 }, // MVL -> LUA
   { origin: 5, destination: 11 }, // MVL -> SAV
+  { origin: 5, destination: 14 }, // MVL -> MBJ
   { origin: 5, destination: 73 }, // MVL -> NEGS
 
+  // Subroutes starting from GUT
   { origin: 2, destination: 4 }, // GUT -> LUA
   { origin: 2, destination: 11 }, // GUT -> SAV
+  { origin: 2, destination: 14 }, // GUT -> MBJ
   { origin: 2, destination: 73 }, // GUT -> NEGS
 
+  // Subroutes starting from LUA
   { origin: 4, destination: 11 }, // LUA -> SAV
+  { origin: 4, destination: 14 }, // LUA -> MBJ
   { origin: 4, destination: 73 }, // LUA -> NEGS
 
+  // Subroutes starting from SAV
+  { origin: 11, destination: 14 }, // SAV -> MBJ
   { origin: 11, destination: 73 }, // SAV -> NEGS
+
+  // Subroutes starting from MBJ
+  { origin: 14, destination: 73 }, // MBJ -> NEGS
 ];
 
 // ----------------------------73-3-------------------------------------
