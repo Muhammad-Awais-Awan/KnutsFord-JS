@@ -1,11 +1,20 @@
 // config/database.js
 const sql = require("mssql");
 
+// const config = {
+//   user: "BusSystem",
+//   password: "BusSystem",
+//   database: "KnutFord_Database_Dev",
+//   server: "VmExternalDev",
+//   options: {
+//     trustServerCertificate: true, // For local development, you might need this if you're connecting locally
+//   },
+// };
 const config = {
   user: "BusSystem",
   password: "BusSystem",
-  database: "KnutFord_Database_Dev",
-  server: "VmExternalDev",
+  database: "busSystem",
+  server: "DESKTOP-JK89I6H",
   options: {
     trustServerCertificate: true, // For local development, you might need this if you're connecting locally
   },

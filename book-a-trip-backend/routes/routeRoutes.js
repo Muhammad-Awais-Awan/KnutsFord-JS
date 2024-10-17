@@ -2,6 +2,8 @@
 const express = require("express");
 const router = express.Router();
 const { poolPromise, sql } = require("../config/dataBaseConnection");
+// const { getRoutesTable, getParentRouteBranchStops } = require("./routeFinder"); // Import your route functions
+const RouteFinder = require("./routeFinder"); // Assuming you have the RouteFinder class in a separate file
 
 // Get routes based on origin and destination
 router.get("/", async (req, res) => {
@@ -175,7 +177,42 @@ router.get("/available-times", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
+// Endpoint to find the optimal route
+router.get("/find-route", async (req, res) => {
+  const { originBranchID, destinationBranchID } = req.query;
 
+  if (!originBranchID || !destinationBranchID) {
+    return res.status(400).json({
+      error: "Please provide both originBranchID and destinationBranchID",
+    });
+  }
+
+  try {
+    const pool = await poolPromise;
+    // Fetch route and stop information from the database
+    const routesTable = await getRoutesTable(pool);
+    const parentRouteBranchStops = await getParentRouteBranchStops(pool);
+
+    // Initialize the RouteFinder class
+    const routeFinder = new RouteFinder(routesTable, parentRouteBranchStops);
+
+    // Find the optimal route
+    const result = await routeFinder.findRoute(
+      parseInt(originBranchID),
+      parseInt(destinationBranchID)
+    );
+
+    // Respond with the results
+    return res.status(200).json({
+      shortestPath: result.shortestPath,
+      allRoutes: result.allRoutes,
+      travelSegments: result.travelSegments,
+    });
+  } catch (error) {
+    console.error("Error finding route:", error);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 // Helper function to get stops (handles both parent and sub-routes)
 async function getRelevantStops(pool, routeId) {
   // Check if the route is a parent or a sub-route
@@ -247,6 +284,51 @@ async function getRelevantStops(pool, routeId) {
         AND StopOrder BETWEEN @originStopOrder AND @destinationStopOrder
       ORDER BY StopOrder
     `);
+}
+async function getRoutesTable(pool) {
+  try {
+    const result = await pool
+      .request()
+      .query(
+        "SELECT OriginBranchid,destinationBranchid,parentRoute,subroute,Id FROM Routes"
+      ); // Adjust your SQL query
+    return result.recordset; // For Microsoft SQL Server
+  } catch (err) {
+    console.error("SQL error", err);
+  }
+}
+// Function to get parent route branch stops
+async function getParentRouteBranchStops(pool) {
+  try {
+    const result = await pool
+      .request()
+      .query("SELECT * FROM ParentRouteBranchStops"); // Adjust your SQL query
+    return result.recordset; // For Microsoft SQL Server
+  } catch (err) {
+    console.error("SQL error", err);
+  }
+}
+async function getRoutesbyOriginDestination(
+  pool,
+  originBranchID,
+  destinationBranchID
+) {
+  try {
+    const pool = await sql.connect(config);
+    const result = await pool
+      .request()
+      .query(
+        `SELECT Id FROM Routes where originBranchId=${originBranchID} and destinationbranchid=${destinationBranchID}`
+      ); // Adjust your SQL query
+    const returnResult = [];
+    result.recordset.map((row) => {
+      returnResult.push(row.Id);
+    });
+
+    return returnResult; // For Microsoft SQL Server
+  } catch (err) {
+    console.error("SQL error", err);
+  }
 }
 
 module.exports = router;
